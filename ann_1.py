@@ -108,6 +108,11 @@ variance = accuracies.std()
 
 #tuning the ANN
 
+
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+
 def build_classifier(optimizer):
     classifier = Sequential()
     classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu', input_dim=11))
